@@ -85,6 +85,7 @@ public class Tests
         return true;
 
     }
+
     public void TestDynamicArray()
     {
         if (this.DynArrIntAdd() != true)
@@ -110,8 +111,210 @@ public class Tests
 
     }
 
+    private bool LLIntAdd() {
+        var ll = new LinkedList<int>();
+        ll.Add(0);
+        ll.Add(1);
+        ll.Add(2);
+        ll.Add(3);
+
+        if (ll.Get(0) !=0) return false;
+        if (ll.Get(1) !=1) return false;
+        if (ll.Get(2) !=2) return false;
+        if (ll.Get(3) !=3) return false;
+
+        return true;
+    }
+
+    private bool LLIntRemove() {
+        var ll = new LinkedList<int>();
+        ll.Add(0);
+        ll.Add(1);
+        ll.Add(2);
+        ll.Add(3);
+
+        ll.Remove(0);
+        ll.Remove(0);
+        ll.Remove(0);
+
+        if (ll.Get(0) !=3) return false;
+
+        return true;
+    }
+    private bool LLIntModify() {
+        var ll = new LinkedList<int>();
+        ll.Add(0);
+        ll.Add(1);
+        ll.Add(2);
+        ll.Add(3);
+
+        ll.Modify(1,0);
+        ll.Modify(2,0);
+        ll.Modify(3,0);
+
+        if (ll.Get(0) !=0) return false;
+        if (ll.Get(1) !=0) return false;
+        if (ll.Get(2) !=0) return false;
+        if (ll.Get(3) !=0) return false;
+
+        return true;
+    }
+
+
     public void TestLinkedList()
     {
-        var ll = new LinkedList<int>
+        if (this.LLIntAdd() != true) 
+            throw new Exception("LLIntAdd test failed");
+        if (this.LLIntRemove() != true) 
+            throw new Exception("llintadd test failed");
+        if (this.LLIntModify() != true) 
+            throw new Exception("llintadd test failed");
     }
+
+    private bool StackIntAdd(){
+        var stack = new Stack<int>();
+
+        stack.Push(1);
+        if (stack.GetTop() != 1) 
+            return false;
+        stack.Push(2);
+        if (stack.GetTop() != 2) 
+            return false;
+         stack.Push(3);
+        if (stack.GetTop() != 3) 
+            return false;
+
+        return true;
+    }
+
+    private bool StackPop() {
+        var stack = new Stack<int>();
+        stack.Push(1);
+        stack.Push(2);
+        stack.Push(3);
+        stack.Push(4);
+
+        if (stack.Pop() != 4) return false;
+        if (stack.Pop() != 3) return false;
+        if (stack.Pop() != 2) return false;
+        if (stack.Pop() != 1) return false;
+
+        return true;
+    }
+
+    private bool StackCount() {
+        var stack = new Stack<int>();
+        stack.Push(1);
+        stack.Push(2);
+        stack.Push(3);
+        stack.Push(4);
+
+        if (stack.Count() != 4) return false;
+
+        return true;
+    }
+
+
+    public void TestStack(){
+        if (this.StackIntAdd() != true)
+            throw new Exception("StackIntAdd test failed");
+        if (this.StackPop() != true)
+            throw new Exception("StackPop test failed");
+        if (this.StackCount() != true)
+            throw new Exception("StackCount test failed");
+   }
+
+    public bool QEnqueueDequeue() {
+        var q = new Queue<int>(100);
+
+        q.Enqueue(1);
+        q.Enqueue(2);
+        q.Enqueue(3);
+        q.Enqueue(4);
+
+        if (q.Dequeue() != 1) return false;
+        if (q.Dequeue() != 2) return false;
+        if (q.Dequeue() != 3) return false;
+        if (q.Dequeue() != 4) return false;
+
+        return true;
+    }
+
+    public bool QFull() {
+        var q = new Queue<int>(4);
+
+        q.Enqueue(1);
+        q.Enqueue(2);
+        q.Enqueue(3);
+        try {
+        q.Enqueue(4);
+        }
+        catch (Exception ex) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool QEmpty() {
+        var q = new Queue<int>(4);
+
+        q.Enqueue(1);
+        q.Dequeue();
+        try {
+        q.Dequeue();
+        }
+        catch (Exception ex) {
+            return true;
+        }
+        return false;
+    }
+
+    public bool QPeak() {
+        var q = new Queue<int>(100);
+        q.Enqueue(1);
+        q.Enqueue(2);
+        q.Enqueue(3);
+
+        if (q.Peak() != 1) return false;
+        q.Dequeue();
+        if (q.Peak() != 2) return false;
+        q.Dequeue();
+        if (q.Peak() != 3) return false;
+        
+        return true;
+    }
+
+    public bool QCapacity(){
+        var q = new Queue<int>(4);
+        q.Enqueue(1);
+        if (q.Capacity() != 1) return false;
+        q.Enqueue(1);
+        if (q.Capacity() != 2) return false;
+        q.Enqueue(1);
+        if (q.Capacity() != 3) return false;
+        q.Dequeue();
+        if (q.Capacity() != 2) return false;
+        q.Enqueue(1);
+        if (q.Capacity() != 3) return false;
+        q.Dequeue();
+        if (q.Capacity() != 2) return false;
+
+        return true;
+  }
+
+
+
+   public void TestQueue() {
+        if (this.QEnqueueDequeue() != true)
+            throw new Exception("QEnqueueDequeue test failed");
+        if (this.QFull() != true)
+            throw new Exception("QFull test failed");
+         if (this.QEmpty() != true)
+            throw new Exception("QEmpty test failed");
+         if (this.QPeak() != true)
+            throw new Exception("QPeak test failed");
+         if (this.QCapacity() != true)
+            throw new Exception("QCapacity test failed");
+      }
 }

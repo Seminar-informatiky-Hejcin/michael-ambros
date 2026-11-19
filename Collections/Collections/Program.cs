@@ -7,8 +7,8 @@ class Program
         Tests test = new Tests();
         test.TestDynamicArray();
         test.TestLinkedList();
-
-
+        test.TestStack();
+        test.TestQueue();
     }
 }
 
