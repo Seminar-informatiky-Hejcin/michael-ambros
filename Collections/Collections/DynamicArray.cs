@@ -1,28 +1,29 @@
 using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 
 namespace Collections;
 
-public class DynamicArray
+public class DynamicArray<T>
 {
 
-    private string[] internalArray;
+    private T[] internalArray;
 
-    public int Count {get; private set;}
-    public int Capacity {get; private set;}
+    public int Count { get; private set; }
+    public int Capacity { get; private set; }
     private int multiplicatorForResizingArray = 2;
 
     public DynamicArray()
     {
         Capacity = 4;
-        internalArray = new string[Capacity];
+        internalArray = new T[Capacity];
         Count = 0;
     }
 
-    public string GetValue(int index)
+    public T GetValue(int index)
     {
-        if (index > Count || 0 <= index)
+        if (index > Count || index < 0)
         {
             throw new IndexOutOfRangeException();
         }
@@ -30,13 +31,13 @@ public class DynamicArray
         return internalArray[index];
     }
 
-    public void AddValue(string value)
+    public void AddValue(T value)
     {
         //todo: max kapacity
         if (Count == Capacity)
         {
             Capacity = Capacity * multiplicatorForResizingArray;
-            var newInternalArray = new string[Capacity];
+            var newInternalArray = new T[Capacity];
 
             for (int i = 0; i < Count; i++)
             {
@@ -49,6 +50,15 @@ public class DynamicArray
         //vleze se do kapacity
         internalArray[Count] = value;
         Count++;
+    }
+
+    public void Pop()
+    {
+        Count--;
+        if (Capacity / 2 > Count)
+        {
+            Capacity =  Capacity / 2;
+        }
     }
 
 
