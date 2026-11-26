@@ -1,26 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/home/michael/Documents/GitHub/Schools/goh-2026-27/pinformatika/michael-ambros/Collections/Collections/Collections.csproj": {}
+    "C:\\Users\\ambrosm\\Documents\\GitHub\\michael-ambros\\Collections\\Collections\\Collections.csproj": {}
   },
   "projects": {
-    "/home/michael/Documents/GitHub/Schools/goh-2026-27/pinformatika/michael-ambros/Collections/Collections/Collections.csproj": {
+    "C:\\Users\\ambrosm\\Documents\\GitHub\\michael-ambros\\Collections\\Collections\\Collections.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/michael/Documents/GitHub/Schools/goh-2026-27/pinformatika/michael-ambros/Collections/Collections/Collections.csproj",
+        "projectUniqueName": "C:\\Users\\ambrosm\\Documents\\GitHub\\michael-ambros\\Collections\\Collections\\Collections.csproj",
         "projectName": "Collections",
-        "projectPath": "/home/michael/Documents/GitHub/Schools/goh-2026-27/pinformatika/michael-ambros/Collections/Collections/Collections.csproj",
-        "packagesPath": "/home/michael/.nuget/packages/",
-        "outputPath": "/home/michael/Documents/GitHub/Schools/goh-2026-27/pinformatika/michael-ambros/Collections/Collections/obj/",
+        "projectPath": "C:\\Users\\ambrosm\\Documents\\GitHub\\michael-ambros\\Collections\\Collections\\Collections.csproj",
+        "packagesPath": "C:\\Users\\ambrosm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ambrosm\\Documents\\GitHub\\michael-ambros\\Collections\\Collections\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/michael/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\ambrosm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -60,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.115/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.115/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
